@@ -20,6 +20,24 @@
                 </ul>
             </div>
         @endif
+
+        <!-- login_error come from variable in with method in AuthController.php -->
+        <!-- @if (session('login_error'))
+                <div class="alert alert-success">
+                    {{ session('login_error') }}
+                </div>
+        @endif -->
+        <x-alert type="danger" :session="session('login_error')"></x-alert>
+
+        <!-- @if (session('logout'))
+                <div class="alert alert-success">
+                    {{ session('logout') }}
+                </div>
+        @endif -->
+
+        <x-alert type="danger" :session="session('logout')"></x-alert>
+
+
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
